@@ -2,15 +2,20 @@
     <mat-sidenav mode="side" opened>
         <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-                
-            
-                <a class="nav-link" routerLink="/">Task List</a>
-                <a class="nav-link" routerLink="/">Task List</a>
-                <a class="nav-link" routerLink="/">Task List</a>
+
+
+                <a class="nav-link" routerLink="../task/list">Task List</a>
+                <a class="nav-link" routerLink="./">Task List</a>
+                <a class="nav-link" routerLink="./">Task List</a>
 
             </li>
 
         </ul>
     </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
 
 </mat-sidenav-container>

@@ -10,17 +10,23 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { NavbarComponent } from './todo-list/navbar/navbar.component';
 import { MenubarComponent } from './todo-list/menubar/menubar.component';
 import { TodoListModule } from './todo-list/todo-list.module';
+import { TaskListComponent } from './todo-list/task-list/task-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AddTaskComponent } from './todo-list/add-task/add-task.component';
 
 @NgModule({
   declarations: [
-    AppComponent, FooterComponent, TodoListComponent, NavbarComponent, MenubarComponent
+    AppComponent, FooterComponent, TodoListComponent, NavbarComponent, MenubarComponent,TaskListComponent,AddTaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule, 
-    TodoListModule
+    MaterialModule,
+    TodoListModule,
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

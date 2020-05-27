@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TodoListComponent } from './todo-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MenubarComponent } from './menubar/menubar.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 
 
@@ -16,6 +18,7 @@ import { MenubarComponent } from './menubar/menubar.component';
     TodoListRoutingModule
   ],
   exports:[
+    
   ]
 })
 export class TodoListModule { }
