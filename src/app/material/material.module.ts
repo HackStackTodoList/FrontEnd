@@ -15,6 +15,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/card";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 const MaterialComponents = [
   MatButtonModule,
   MatButtonToggleModule,
@@ -31,7 +36,12 @@ const MaterialComponents = [
   MatSortModule,
   MatDialogModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatCheckboxModule,
+  MatCardModule,
+  MatAutocompleteModule,
+  MatMenuModule,
+  MatSnackBarModule
 ];
 @NgModule({
   imports: [MaterialComponents],

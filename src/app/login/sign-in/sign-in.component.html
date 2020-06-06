@@ -1,0 +1,41 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title color="primary">Sign In</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <form class="form" #custForm="ngForm" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+            <br>
+
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input type="text" matInput name="username" required #username="ngModel" [(ngModel)]="user.username">
+                <mat-icon matSuffix>
+                    person
+                </mat-icon>
+                <mat-error *ngIf="custForm.controls['username']?.errors?.required">Username is requied</mat-error>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input [type]="hide?'password':'text'" matInput name="password" required #password="ngModel"
+                    [(ngModel)]="user.password">
+                <mat-icon matSuffix (click)="hide=!hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
+
+                <mat-error *ngIf="custForm.controls['password']?.errors?.required">Password is requied</mat-error>
+            </mat-form-field>
+
+
+
+        </mat-card-content>
+        <mat-error *ngIf="flag===true"> Invalid id or password </mat-error>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Sign In</button>
+        </mat-card-actions>
+    </form>
+    <mat-divider></mat-divider>
+
+    <mat-card-footer class="footer">
+        New here!! <a routerLink="../register">register</a>
+    </mat-card-footer>
+
+</mat-card>

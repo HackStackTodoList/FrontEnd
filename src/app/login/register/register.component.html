@@ -1,0 +1,49 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title color="primary">New User</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <form class="form" #custForm="ngForm" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+            <br>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input type="text" matInput name="firstName" required #firstName="ngModel" [(ngModel)]="user.name">
+                <mat-icon matSuffix>face</mat-icon>
+                <mat-error *ngIf="custForm.controls['firstName']?.errors?.required">Name is requied</mat-error>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input type="text" matInput name="username" required #username="ngModel" [(ngModel)]="user.username">
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="custForm.controls['username']?.errors?.required">Username is requied</mat-error>
+            </mat-form-field><br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input [type]="hide?'password':'text'" matInput name="password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required #password="ngModel"
+                    [(ngModel)]="user.password">
+                <mat-icon matSuffix (click)="hide=!hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
+                <mat-error *ngIf="custForm.controls['password']?.errors?.pattern">Must contain at least one number and
+                    one uppercase and lowercase letter, and at least 8 or more characters </mat-error>
+                <mat-error *ngIf="custForm.controls['password']?.errors?.required">Password is requied</mat-error>
+            </mat-form-field>
+            <!--<mat-form-field>
+                <mat-label>Confirm Password</mat-label>
+                <input type="password" matInput name="confirmPassword" required #confirmPassword="ngModel"
+                [(ngModel)]="password">
+            </mat-form-field>-->
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="!custForm.form.valid" mat-raised-button color="primary">Sign Up</button>
+        </mat-card-actions>
+    </form>
+    <mat-divider></mat-divider>
+
+    <mat-card-footer class="footer">
+
+        Already user! <a routerLink="../sign">login</a>
+    </mat-card-footer>
+
+</mat-card>

@@ -1,0 +1,16 @@
+.card {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .header-image {
+    background-image: url('../../assets/images/kalpesh.jpg');
+    background-size: cover;
+  }
+  .img{
+    width: 5%;
+    height: 5%;
+  }
+  a{
+    margin-left: 5rem;
+  }

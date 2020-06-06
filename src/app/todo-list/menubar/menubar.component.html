@@ -1,16 +1,45 @@
 <mat-sidenav-container>
     <mat-sidenav mode="side" opened>
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
+        <img src="/assets/images/user.png" class="user-header-image" alt="user">
+        <div class="mat-body-2">Hello, {{username}}</div>
+        <mat-nav-list>
+            <mat-list-item>
+                <a routerLink="../task/list">
+                    <mat-icon>list_alt</mat-icon>
+                    Task List
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="../task/archieve">
+                    <mat-icon>
+                        done_all
+                    </mat-icon>
+                    Completed Task
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [matMenuTriggerFor]="catMenu">
+                    <mat-icon>more_vert</mat-icon>
+                    Category
+                    <mat-icon> keyboard_arrow_right</mat-icon>
+                </a>
+                <mat-menu #catMenu="matMenu" xPosition="after">
+                    <span *ngFor="let cat of category">
+                        <a *ngIf="cat" mat-menu-item [routerLink]="['../task/category',cat]">
+                            <mat-icon>{{cat|lowercase }}</mat-icon>
+                            {{cat}}
+                        </a>
+                    </span>
+                </mat-menu>
+            </mat-list-item>
+            <mat-list-item>
+                <a (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Logout
+                </a>
+            </mat-list-item>
 
-
-                <a class="nav-link" routerLink="../task/list">Task List</a>
-                <a class="nav-link" routerLink="./">Task List</a>
-                <a class="nav-link" routerLink="./">Task List</a>
-
-            </li>
-
-        </ul>
+        </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -19,3 +48,14 @@
 
 
 </mat-sidenav-container>
+<!--<ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+
+
+                <a class="nav-link" routerLink="../task/list">Task List</a>
+                <a class="nav-link" routerLink="../task/archieve">Completed Task</a>
+                <a class="nav-link" routerLink="./">Task List</a>
+
+            </li>
+
+        </ul>-->

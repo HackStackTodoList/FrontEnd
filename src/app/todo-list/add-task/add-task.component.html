@@ -3,23 +3,39 @@
     <form #custForm="ngForm" (ngSubmit)="save()" class="form-group">
         <mat-form-field>
             <mat-label>Task Name</mat-label>
-            <input matInput name="name" [(ngModel)]="task.task_name">
+            <input matInput name="name" #name="ngModel" [(ngModel)]="task.task_name" required>
+            <mat-error *ngIf="custForm.controls['name']?.errors?.required">Task name is requied</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Due a date</mat-label>
-            <input matInput  name="due_date" [(ngModel)]="task.due_date" [matDatepicker]="due_date">
+            <input matInput name="due_date" [min]="minDate"  [(ngModel)]="task.due_date"
+                [matDatepicker]="due_date" required>
             <mat-datepicker-toggle matSuffix [for]="due_date"></mat-datepicker-toggle>
-            <mat-datepicker touchUi #due_date></mat-datepicker>
+            <mat-datepicker #due_date></mat-datepicker>
+            <mat-error *ngIf="custForm.controls['due_date']?.errors?.required">Due date is requied</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <input matInput name="category"  required [(ngModel)]="task.category" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <span *ngFor="let option of category">
+                    <mat-option *ngIf="option" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </span>
+            </mat-autocomplete>
+            <mat-hint>Select from list. If not present write another</mat-hint>
+            <mat-error *ngIf="custForm.controls['category']?.errors?.required">Category is requied</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label color="accent">Description</mat-label>
-            <textarea matInput name="description" [(ngModel)]="task.description"></textarea>
+            <input matInput name="description" [(ngModel)]="task.description">
 
         </mat-form-field>
     </form>
 
 </div>
 <div mat-dialog-action>
-    <button (click)=close()>close</button>
-    <button (click)=save()>Save</button>
+    <button mat-raised-button (click)=close() color="warn">Close</button>
+    <button mat-raised-button [disabled]="!custForm.form.valid" (click)=save() color="primary">Save</button>
 </div>

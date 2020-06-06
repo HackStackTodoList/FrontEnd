@@ -1,9 +1,9 @@
 .footer {
-    
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+  left: 10;
+  bottom: 0;
+  width: 98%;
+    background-color: black;
+    color: aliceblue;
+    position: fixed;
+    text-align: center;
   }
-    
-  
-    
-  

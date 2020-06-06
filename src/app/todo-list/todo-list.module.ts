@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { ArchivesComponent } from './archives/archives.component';
+import { CategoryComponent } from './category/category.component';
 
 
 

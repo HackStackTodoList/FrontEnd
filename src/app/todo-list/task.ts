@@ -1,12 +1,11 @@
 export class Task {
-    __id: any;
+  
+    _id: any;
     task_name: String;
     due_date: Date;
     status: String;
-    start_date: Date;
     description: String;
-
-
+    category:String;
     constructor() {
 
 

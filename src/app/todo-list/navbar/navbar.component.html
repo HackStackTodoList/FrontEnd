@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-<div>
-    <a class="navbar-brand" routerLink="/">Todo List<mat-icon>home</mat-icon></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div>
+        <a class="navbar-brand" routerLink="/">Todo List<mat-icon>home</mat-icon></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-</div>
+    </div>
 
     <div class="collapse navbar-collapse my-2 my-lg-0" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
@@ -18,4 +18,21 @@
 
         </ul>
     </div>
-</nav>
+</nav>-->
+<mat-toolbar color="primary" class="navbar">
+    <div>
+        <a mat-button class="companyName" routerLink="../task/list">
+            <span>Todo List </span>
+
+        </a>
+    </div>
+    <div>
+        <a mat-button class="infoName" routerLink="../about">
+            About <mat-icon>info</mat-icon>
+        </a>
+        <a mat-button class="infoName" routerLink="../contact">
+            Contact <mat-icon>contact_support</mat-icon>
+        </a>
+    </div>
+
+</mat-toolbar>

@@ -1,1 +1,19 @@
-
+.navbar{
+    justify-content: space-between;
+}
+span{
+    padding: 1rem;
+}
+.companyName{
+    font-size: 150%;
+}
+button{
+    font-size: 110%;
+    min-width: min-content;
+}
+div {
+    overflow: inherit;
+}
+.infoName{
+    font-size: large;
+}
